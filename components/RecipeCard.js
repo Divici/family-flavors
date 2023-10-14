@@ -1,33 +1,38 @@
-import { View, Text, TouchableOpacity, Dimensions, SafeAreaView } from "react-native"
+import { View, Text, TouchableOpacity, SafeAreaView } from "react-native"
 import { useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const RecipeCard = ({style}) => {
+    const navigation = useNavigation();
+
     return (
-        <SafeAreaView className="h-40 mt-4 mb-10 flex-row justify-center">
+        <SafeAreaView className="h-48 mt-4 mb-4 flex-row justify-center bg-dark-alt">
 
             {/* Left Side image */}
-            <View className="h-full w-40 mx-4 rounded-xl bg-orange">
-            </View>
+            <TouchableOpacity 
+                className="h-40 w-40 mx-4 my-auto rounded-xl bg-orange"
+                onPress={() => navigation.navigate('Recipe')}
+            >
+            </TouchableOpacity>
 
             {/* Right Side */}
             <View className="flex-col flex-1 justify-between mr-4" >
-                <View className="">
+                <TouchableOpacity className="">
                     <Text className="text-white text-base font-bold text-center pt-4">
                         Macaroni and Cheese
                     </Text>
-                </View>
-                <View>
+                </TouchableOpacity>
+                <TouchableOpacity>
                     <Text className="text-white">
-                        Prep Time:
+                        Cook Time:
                         <Text className="text-white"> 10 Minutes</Text>
                     </Text>
                     <Text className="text-white">
-                        Cook Time:
-                        <Text className="text-white"> 45 Minutes</Text>
+                        Serves:
+                        <Text className="text-white"> 6-7</Text>
                     </Text>
-                </View>
-                <TouchableOpacity className="self-end">
+                </TouchableOpacity>
+                <TouchableOpacity className="self-end mb-2">
                     <AntDesign name='edit' style={{color: '#FFF', fontSize: 30}} />
                 </TouchableOpacity>
             </View>

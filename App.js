@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import Home from "./screens/Home";
 import MyRecipes from "./screens/MyRecipes";
+import Recipe from "./screens/Recipe";
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,10 @@ const App = () => {
         <Stack.Screen 
           name="MyRecipes" 
           component={MyRecipes} 
+        />
+        <Stack.Screen 
+          name="Recipe" 
+          component={Recipe} 
         />
         
         
