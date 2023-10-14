@@ -1,36 +1,39 @@
-import { View, Text, TouchableOpacity } from "react-native"
+import { View, Text, TouchableOpacity, Dimensions, SafeAreaView } from "react-native"
 import { useNavigation } from '@react-navigation/native';
-import Feather from 'react-native-vector-icons/Feather';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const RecipeCard = ({style}) => {
-  return (
-    <View className="flex flex-row items-center h-40 mt-4 mb-10">
-            
-            {/* Left Side */}
-            <View className=" ">
-                <View className="h-40 w-40 mx-4 rounded-xl bg-orange">
+    return (
+        <SafeAreaView className="h-40 mt-4 mb-10 flex-row justify-center">
 
-                </View>
+            {/* Left Side image */}
+            <View className="h-full w-40 mx-4 rounded-xl bg-orange">
             </View>
 
             {/* Right Side */}
-            <View className="" >
-                <Text className="text-white text-base font-bold">
-                    Macaroni and Cheese
-                </Text>
-                <Text className="text-white">
-                    Prep Time:
-                    <Text className="text-white"> 10 Minutes</Text>
-                </Text>
-                <Text className="text-white">
-                    Cook Time:
-                    <Text className="text-white"> 45 Minutes</Text>
-                </Text>
-                
+            <View className="flex-col flex-1 justify-between mr-4" >
+                <View className="">
+                    <Text className="text-white text-base font-bold text-center pt-4">
+                        Macaroni and Cheese
+                    </Text>
+                </View>
+                <View>
+                    <Text className="text-white">
+                        Prep Time:
+                        <Text className="text-white"> 10 Minutes</Text>
+                    </Text>
+                    <Text className="text-white">
+                        Cook Time:
+                        <Text className="text-white"> 45 Minutes</Text>
+                    </Text>
+                </View>
+                <TouchableOpacity className="self-end">
+                    <AntDesign name='edit' style={{color: '#FFF', fontSize: 30}} />
+                </TouchableOpacity>
             </View>
-            
-        </View>
-  )
+
+        </SafeAreaView>
+    )
 }
 
 export default RecipeCard
